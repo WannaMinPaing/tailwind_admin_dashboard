@@ -3,7 +3,7 @@ import {FaTachometerAlt,FaRegSun,FaChevronRight,FaWrench, FaStickyNote,FaRegChar
 
 const Sidebar = () => {
     return(
-        <div className='bg-[#4E73DF]  h-full px-[10px]'>
+        <div className='bg-[#4E73DF]  h-screen px-[10px]'>
 
             <div className="px-[15px] py-[30px] flex items-center justify-center border-b-[1px] border-[#EDEDED]/[0.3]">
                 <h1 className="text-white text-[18px] leading-[24px] font-extrabold cursor-pointer">Admin Pannel</h1>

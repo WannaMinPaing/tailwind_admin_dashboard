@@ -1,8 +1,13 @@
-import React  from "react";
+import React, { useState }  from "react";
 import {FaEnvelope, FaRegBell, FaSearch } from 'react-icons/fa';
 import profile from "../assets/profile.jpg";
 
 const DashboardView = () => {
+    const [open,setOpen] = useState(false);
+    const showDropDown  = () => {
+        setOpen(!open)
+    }
+
     return (
         <div className="flex items-center justify-between h-[70px] shadow-lg px-[25px]">
             <div className="flex items-center rounded-[5px]">
@@ -16,11 +21,19 @@ const DashboardView = () => {
                     <FaRegBell/>
                     <FaEnvelope/>
                 </div>
-                <div className="flex items-center gap-[15px] relative">
+                <div className="flex items-center gap-[15px] relative" onClick={showDropDown}>
                     <p>Wanna Min Paing</p>
                     <div className="cursor-pointer flex items-center">
                         <img src={profile} alt="" className="rounded-full h-[30px] w-[30px] "/>
                     </div>
+                    {
+                        open && 
+                        <div className="bg-white border h-[120px] w-[150px] absolute bottom-[-135px] z-20 right-0 pt-[15px] pl-[15px] space-y-[10px] ">
+                            <p className="cursor-pointer hover:text-[blue] font-semibold">Profile</p>
+                            <p className="cursor-pointer hover:text-[blue] font-semibold">Setting</p>
+                            <p className="cursor-pointer hover:text-[blue] font-semibold">Logout</p>
+                        </div>
+                    }
                 </div>
             </div>
         </div>
